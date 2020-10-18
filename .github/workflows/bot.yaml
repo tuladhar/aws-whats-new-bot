@@ -20,7 +20,7 @@ jobs:
         run: echo "Fri, 16 Oct 2020 21:45:50 +0000" > src/LAST_PUBLISHED_DATE
 
       - name: Commit LAST_PUBLISHED_DATE
-      - uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updated automatically
           file_pattern: src/LAST_PUBLISHED_DATE
