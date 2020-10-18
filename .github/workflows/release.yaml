@@ -10,8 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-go@v2
         with:
           go-version: 1.13
+
       - run: make go-install
+
       - run: make go-build
+
+      - name: Commit build binary
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Add binary build by release workflow
+          file_pattern: bin/bot
+          commit_user_name: Puru
+          commit_user_email: ptuladhar3@gmail.com
+          commit_author: Puru <ptuladhar3@gmail.com>
