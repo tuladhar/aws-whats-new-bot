@@ -5,7 +5,7 @@ on: [push]
 jobs:
   gofmt-auto-commit:
     name: gofmt-auto-commit
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
