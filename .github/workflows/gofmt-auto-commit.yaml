@@ -23,4 +23,4 @@ jobs:
           file_pattern: src/*.go
           commit_user_name: tuladhar
           commit_user_email: ptuladhar3@gmail.com
-          commit_author: gofmt <ptuladhar3@gmail.com>
+          commit_author: gofmt-auto-commit
