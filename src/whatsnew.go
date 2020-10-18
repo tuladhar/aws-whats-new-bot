@@ -6,10 +6,10 @@
 package main
 
 import (
-	"log"
-	"time"
 	"io/ioutil"
+	"log"
 	"strings"
+	"time"
 
 	"github.com/mmcdole/gofeed"
 )
