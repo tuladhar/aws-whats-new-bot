@@ -9,7 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: bin/bot
+      - name: Run bot
+        run: cd src && ../bin/bot
         env:
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
