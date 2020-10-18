@@ -8,7 +8,6 @@ package main
 import (
 	"log"
 	"time"
-	// "bytes"
 	"io/ioutil"
 	"strings"
 
