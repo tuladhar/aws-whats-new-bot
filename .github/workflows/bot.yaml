@@ -1,1 +1,10 @@
+name: "AWS What's New Bot"
 
+on:
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - run: bin/bot
