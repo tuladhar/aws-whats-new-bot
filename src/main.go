@@ -11,20 +11,20 @@ import (
 )
 
 type Credentials struct {
-    ConsumerKey       string
-    ConsumerSecret    string
-    AccessToken       string
-    AccessTokenSecret string
+	ConsumerKey       string
+	ConsumerSecret    string
+	AccessToken       string
+	AccessTokenSecret string
 }
 
 func main() {
 	twitter := Twitter{}
-    creds := Credentials{
-        AccessToken:       os.Getenv("TWITTER_ACCESS_TOKEN"),
-        AccessTokenSecret: os.Getenv("TWITTER_ACCESS_TOKEN_SECRET"),
-        ConsumerKey:       os.Getenv("TWITTER_CONSUMER_KEY"),
-        ConsumerSecret:    os.Getenv("TWITTER_CONSUMER_SECRET"),
-    }
+	creds := Credentials{
+		AccessToken:       os.Getenv("TWITTER_ACCESS_TOKEN"),
+		AccessTokenSecret: os.Getenv("TWITTER_ACCESS_TOKEN_SECRET"),
+		ConsumerKey:       os.Getenv("TWITTER_CONSUMER_KEY"),
+		ConsumerSecret:    os.Getenv("TWITTER_CONSUMER_SECRET"),
+	}
 	twitter.InitializeClient(&creds)
 	twitter.VerifyCredentials()
 
