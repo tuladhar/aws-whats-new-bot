@@ -1,0 +1,26 @@
+name: gofmt-auto-commit
+
+on: [push]
+
+jobs:
+  gofmt-auto-commit:
+    name: gofmt-auto-commit
+    runs-on: ubunt-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.13
+
+      - name: Run gofmt
+        run: cd src && go fmt
+
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Commit by gofmt-auto-commit
+          file_pattern: src/*.go
+          commit_user_name: tuladhar
+          commit_user_email: ptuladhar3@gmail.com
+          commit_author: gofmt <ptuladhar3@gmail.com>
