@@ -24,6 +24,6 @@ jobs:
         with:
           commit_message: Updated automatically by bot
           file_pattern: src/LAST_PUBLISHED_DATE
-          commit_user_name: Bot
+          commit_user_name: Puru
           commit_user_email: ptuladhar3@gmail.com
-          commit_author: Bot <ptuladhar3@gmail.com>
+          commit_author: Puru <ptuladhar3@gmail.com>
