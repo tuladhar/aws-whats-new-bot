@@ -7,23 +7,23 @@ jobs:
   run-bot:
     runs-on: ubuntu-latest
     steps:
-#       - run: bin/bot
-#         env:
-#           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-#           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
-#           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-#           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+      - run: bin/bot
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 
       - uses: actions/checkout@v2
 
-      - name: Update LAST_PUBLISHED_DATE
-        run: echo "Fri, 16 Oct 2020 21:50:50 +0000" > src/LAST_PUBLISHED_DATE
+#       - name: Update LAST_PUBLISHED_DATE
+#         run: echo "Fri, 16 Oct 2020 21:50:50 +0000" > src/LAST_PUBLISHED_DATE
 
       - name: Commit LAST_PUBLISHED_DATE
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Updated automatically by bot
           file_pattern: src/LAST_PUBLISHED_DATE
-          commit_user_name: Puru
-          commit_user_email: ptuladhar3@gmail.com
-          commit_author: Puru <ptuladhar3@gmail.com>
+          commit_user_name: tuladhar
+          commit_user_email: tuladharpuru@gmail.com
+          commit_author: Puru <tuladharpuru@gmail.com>
