@@ -2,9 +2,9 @@ name: "AWS What's New Bot"
 
 on:
   workflow_dispatch:
-  schedule:
+#  schedule:
     # Trigger workflow automatically every hour
-    - cron: 0 * * * *
+#    - cron: 0 * * * *
 
 jobs:
   run-bot:
