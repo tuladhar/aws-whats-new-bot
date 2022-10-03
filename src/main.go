@@ -6,25 +6,22 @@
 package main
 
 import (
-	"os"
 	"time"
+
+	"github.com/kelseyhightower/envconfig"
 )
 
 type Credentials struct {
-	ConsumerKey       string
-	ConsumerSecret    string
-	AccessToken       string
-	AccessTokenSecret string
+	ConsumerKey       string `envconfig:"TWITTER_CONSUMER_KEY"`
+	ConsumerSecret    string `envconfig:"TWITTER_CONSUMER_SECRET"`
+	AccessToken       string `envconfig:"TWITTER_ACCESS_TOKEN"`
+	AccessTokenSecret string `envconfig:"TWITTER_ACCESS_TOKEN_SECRET"`
 }
 
 func main() {
 	twitter := Twitter{}
-	creds := Credentials{
-		AccessToken:       os.Getenv("TWITTER_ACCESS_TOKEN"),
-		AccessTokenSecret: os.Getenv("TWITTER_ACCESS_TOKEN_SECRET"),
-		ConsumerKey:       os.Getenv("TWITTER_CONSUMER_KEY"),
-		ConsumerSecret:    os.Getenv("TWITTER_CONSUMER_SECRET"),
-	}
+	var creds Credentials
+	envconfig.Process("", &creds)
 	twitter.InitializeClient(&creds)
 	twitter.VerifyCredentials()
 
