@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
   schedule:
   # Trigger workflow automatically every hour
-  - cron: 0 * * * *
+  # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  # Disable until Tweet API is fixed
+  # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  # - cron: 0 * * * *
 
 jobs:
   run-bot:
